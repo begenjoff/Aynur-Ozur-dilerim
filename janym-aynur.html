@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Janym Ýürejigim Aýnur'a</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ffd1dc 0%, #ffb6c1 100%);
+      color: #4a0033;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #ffe4ec;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #cc0066;
+    }
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      color: #660033;
+    }
+    button {
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      background-color: #ff66a3;
+      border: none;
+      border-radius: 12px;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #e05588;
+    }
+    .hearts {
+      margin-top: 1.5rem;
+      font-size: 2.5rem;
+      color: #ff3366;
+      animation: floatUp 2s ease forwards;
+      user-select: none;
+    }
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-120px);
+        opacity: 0;
+      }
+    }
+    audio {
+      margin-top: 1.5rem;
+      outline: none;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #ff66a3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Janym Ýürejigim Aýnur</h1>
+    <p>
+      Sana bu satırlarımı kalbimin en derin yerinden yazıyorum. Biliyorum, seni üzdüm... Belki bir sözü fazla söyledim, belki bir anı eksik yaşattım... Ama bil ki, hiçbirini isteyerek yapmadım.
+    </p>
+    <p>
+      Sensiz geçen her saniye, kalbimde kocaman bir sessizlik. Senin gülüşün olmadan gün doğmuyor gibi, sesin olmadan dünya susuyor gibi... Sana kıyamam ben. Ne gözyaşına, ne kırgınlığına... Çünkü sen benim için sadece bir sevgili değil, kalbimin evi oldun.
+    </p>
+    <p>
+      Özür dilerim Aýnur... Beni affetmen için ne gerekiyorsa yaparım. Yeter ki elini bırakmayayım, yeter ki "biz" olmaktan vazgeçmeyelim.
+    </p>
+    <p>
+      Kalbim, yalnızca seni severek atıyor. Ve her atışında "keşke tekrar sarılabilsek" diyor...
+    </p>
+    <p>
+      Seni çok seven,<br />
+      Her zaman yanında olmak isteyen,<br />
+      Bir tek seni isteyen kalbin...
+    </p>
+
+    <button id="affetBtn">Beni affettin mi?</button>
+    <div id="hearts" style="display:none;" class="hearts">❤️ ❤️ ❤️ Teşekkür ederim Sevgilim! ❤️ ❤️ ❤️</div>
+
+    <audio id="audioPlayer" controls>
+      <!-- YouTube doğrudan HTML5 audio ile oynatılamaz, örnek mp3 dosyası kullanılmalı -->
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3" />
+      Tarayıcınız audio elementini desteklemiyor.
+    </audio>
+  </div>
+
+  <script>
+    const button = document.getElementById('affetBtn');
+    const hearts = document.getElementById('hearts');
+
+    button.addEventListener('click', () => {
+      hearts.style.display = 'block';
+      hearts.style.animation = 'none'; // Reset animation
+      hearts.offsetHeight; // Trigger reflow
+      hearts.style.animation = null;
+      setTimeout(() => {
+        hearts.style.display = 'none';
+      }, 2000);
+    });
+
+    // Not: YouTube mp3 olarak doğrudan HTML5 audio ile oynatılamaz.
+    // Gerçek mp3 dosyası kullanılması gerekir.
+  </script>
+</body>
+</html>
